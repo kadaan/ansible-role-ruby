@@ -1,0 +1,29 @@
+---
+- name: Ensure ruby homebrew package is installed.
+  homebrew:
+    name: ruby
+    state: present
+
+- name: Ensure rbenv homebrew package is installed.
+  homebrew:
+    name: rbenv
+    state: present
+
+- name: Ensure configured ruby versions are present.
+  command: "rbenv install -s {{ item }}"
+  with_items: "{{ ruby_versions }}"
+
+- name: Ensure configured latest global ruby gem is present.
+  gem:
+    name: "{{ item.name }}"
+    state: latest
+  with_items: "{{ ruby_global_gems }}"
+  when: item.version is undefined or item.version == "latest"
+
+- name: Ensure configured pinned global ruby gem is present.
+  gem:
+    name: "{{ item.name }}"
+    version: "{{ item.version }}"
+    state: present
+  with_items: "{{ ruby_global_gems }}"
+  when: item.version is defined and item.version != "latest"
