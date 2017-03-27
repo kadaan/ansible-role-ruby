@@ -3,11 +3,13 @@
   homebrew:
     name: ruby
     state: present
+  when: ruby_versions.0 is defined
 
 - name: Ensure rbenv homebrew package is installed.
   homebrew:
     name: rbenv
     state: present
+  when: ruby_versions.0 is defined
 
 - name: Ensure configured ruby versions are present.
   command: "rbenv install -s {{ item }}"
