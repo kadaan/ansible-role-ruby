@@ -3,22 +3,25 @@
   homebrew:
     name: ruby
     state: present
+  when: ruby_execute == true
 
 - name: Ensure rbenv homebrew package is installed.
   homebrew:
     name: rbenv
     state: present
+  when: ruby_execute == true
 
 - name: Ensure configured ruby versions are present.
   command: "rbenv install -s {{ item }}"
   with_items: "{{ ruby_versions }}"
+  when: ruby_execute == true
 
 - name: Ensure configured latest global ruby gem is present.
   gem:
     name: "{{ item.name }}"
     state: latest
   with_items: "{{ ruby_global_gems }}"
-  when: item.version is undefined or item.version == "latest"
+  when: ruby_execute == true and (item.version is undefined or item.version == "latest")
 
 - name: Ensure configured pinned global ruby gem is present.
   gem:
@@ -26,4 +29,4 @@
     version: "{{ item.version }}"
     state: present
   with_items: "{{ ruby_global_gems }}"
-  when: item.version is defined and item.version != "latest"
+  when: ruby_execute == true and item.version is defined and item.version != "latest"

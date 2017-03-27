@@ -22,13 +22,13 @@ Global Ruby gems you would like to make sure are installed.
 
 ## Dependencies
 
-  - `kadaan.homebrew`
+  - [kadaan.homebrew](https://galaxy.ansible.com/kadaan/homebrew/)
 
 ## Example Playbook
 
     - hosts: localhost
       roles:
-        - { role: kadaan.ruby }
+        - { role: kadaan.ruby, ruby_execute: true }
 
 ## License
 
