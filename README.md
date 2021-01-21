@@ -1,6 +1,6 @@
 # Ansible Role: Ruby
 
-[![Build Status](https://travis-ci.org/kadaan/ansible-role-ruby.svg?branch=master)](https://travis-ci.org/kadaan/ansible-role-ruby)
+[![Build Status](https://travis-ci.com/kadaan/ansible-role-ruby.svg?branch=master)](https://travis-ci.com/kadaan/ansible-role-ruby)
 
 Installs ruby and global ruby gems.
 
