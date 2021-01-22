@@ -1,6 +1,6 @@
 # Ansible Role: Ruby
 
-[![Build Status](https://travis-ci.com/kadaan/ansible-role-ruby.svg?branch=master)](https://travis-ci.com/kadaan/ansible-role-ruby)
+[![CI][badge-gh-actions]][link-gh-actions]
 
 Installs ruby and global ruby gems.
 
@@ -33,3 +33,6 @@ Global Ruby gems you would like to make sure are installed.
 ## License
 
 Apache 2.0
+
+[badge-gh-actions]: https://github.com/kadaan/ansible-role-ruby/workflows/CI/badge.svg?event=push
+[link-gh-actions]: https://github.com/kadaan/ansible-role-ruby/actions?query=workflow%3ACI

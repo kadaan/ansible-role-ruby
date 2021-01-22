@@ -1,17 +1,20 @@
+---
+dependencies:
+  - kadaan.homebrew
+
 galaxy_info:
+  role_name: ruby
   author: kadaan
-  description: Installs ruby and global ruby gems.
-  license: Apache 2.0
-  min_ansible_version: 2.2
+  description: Installs ruby and global ruby gems
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.5
   platforms:
     - name: MacOSX
       versions:
-        - 10.11
-        - 10.12
+        - all
+        - any
   galaxy_tags:
     - development
     - system
-    - console
+    - packaging
     - ruby
-dependencies:
-  - kadaan.homebrew
